@@ -20,7 +20,13 @@ export class TodoFormComponent implements OnInit {
       isCompleted: false,
       date: new Date(),
     };
-    this.todoService.addTodo(newTodo);
-    this.todoTitle = '';
+    if(this.todoTitle.length >0){
+      this.todoService.addTodo(newTodo);
+      this.todoTitle = '';
+    }
+    else{
+      alert('Title length Cant be Zero')
+    }
+    
   }
 }
